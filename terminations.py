@@ -1,5 +1,5 @@
 # My CS teacher preaches adding a header to every file so this now exists
-# Author:		Brayden Chumbley
+# Author:	Brayden Chumbley
 # Description:	A program that searches for software to be removed in event of a termination
 #				Yeah, I have no idea what is actually going on in this file. It really is just
 #				a bunch of solutions on stackoverflow stitched together with only the most spaghetti
