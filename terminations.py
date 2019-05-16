@@ -1,5 +1,5 @@
 # My CS teacher preaches adding a header to every file so this now exists
-# Author:	Brayden Chumbley
+# Author:		Brayden Chumbley
 # Description:	A program that searches for software to be removed in event of a termination
 #				Yeah, I have no idea what is actually going on in this file. It really is just
 #				a bunch of solutions on stackoverflow stitched together with only the most spaghetti
@@ -81,19 +81,20 @@ def checkCSV(file):
 			
 			empName = line[colHeaders.index("Name")]
 			empFacility = getFacility(line[colHeaders.index("DistinguishedName")].split(",")).replace("OU=", "")
+			empSAM = line[colHeaders.index("SamAccountName")].upper()
 			
 			if(len(removables) > 0):
-				print("===== " + empName + " | " + empFacility + " =====")
+				print("===== " + empName + " | " + empFacility + " | " + empSAM + " =====")
 				for s in removables:
 					print(s)
 				print("")
 			else:
 				#Add employee to empNoGroup if no removable groups are found
-				empNoGroup.append([empName, empFacility, line[colHeaders.index("SamAccountName")].upper()])
+				empNoGroup.append([empName, empFacility, empSAM])
 		
 		#Print out all employees that have no groups
 		if(len(empNoGroup) > 0):
-			print("==========CHECK IFS==========")
+			print("========== CHECK IFS ==========")
 			for empName, empFacility, empSAM in empNoGroup:
 				print(empName + " | " + empFacility + " | " + empSAM)
 			print("")
